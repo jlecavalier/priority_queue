@@ -38,6 +38,34 @@ class Pq:
     # Everything okay!
     print("\nDone")
 
+  def pop(self):
+    if len(self.elts) < 1:
+      print("\nNothing to pop!")
+      return None
+    elif len(self.elts) == 1:
+      popped = self.elts[0]
+      self.elts = []
+      return popped
+    elif len(self.elts) == 2:
+      popped = self.elts[0]
+      self.elts = [self.elts[1]]
+      return popped
+    else:
+      popped = self.elts[0]
+      temp = []
+      for i in range(len(self.elts)):
+        temp.append(self.elts[i])
+      for i in range(len(self.elts)-1):
+        if i % 2 == 0:
+          if i+2 >= len(self.elts):
+            temp[i] = self.elts[i+1]
+          else:
+            temp[i] = min(self.elts[i+1],self.elts[i+2])
+            temp[i+1] = max(self.elts[i+1],self.elts[i+2])
+      del temp[-1]
+      self.elts = temp
+      return popped
+
 if __name__ == "__main__":
   # Initialize the queue
   pq = Pq()
@@ -59,4 +87,6 @@ if __name__ == "__main__":
 
     # Pop something
     elif usr_choice == 2:
-      print("2")
+      popped = pq.pop()
+      if popped != None:
+        print("\nPopped %d off the queue" % popped)
