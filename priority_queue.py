@@ -2,10 +2,8 @@ import argparse
 import math
 
 class Pq:
-  def __init__(self,size):
+  def __init__(self):
   	self.elts = []
-  	for i in range(size):
-  	  self.elts.append(float('inf'))
 
   def display(self):
   	print("\nCurrent queue:")
@@ -25,31 +23,24 @@ class Pq:
       self.elts[0] = even
       self.elts.append(odd)
     else:
-      # First, update the first two elements
-      even = min(self.elts[0],to_push)
-      odd = max(self.elts[0],to_push)
-      if len(self.elts) == 2:
-        self.elts.append(self.elts[1])
-      self.elts[0] = even
-      self.elts[1] = odd
-      # Inductively update the rest of the queue
-      self.elts.append(float('inf'))
-      for i in range(1, int(math.ceil(len(self.elts)/2))-1):
-        even = min(self.elts[2*i],self.elts[(2*i)-1])
-        odd = max(self.elts[2*i],self.elts[(2*i)-1])
-        self.elts[2*i] = even
-        self.elts[(2*i)+1] = odd
+      # Place the new element in the second place
+      self.elts.append(to_push)
+      temp = []
+      for i in range(len(self.elts)):
+        temp.append(self.elts[i])
+      # Inductively correct the queue
+      for i in range(len(self.elts)):
+        if i % 2 == 0:
+          temp[i] = min(self.elts[i],self.elts[i-1])
+          if i+1 < len(self.elts):
+            temp[i+1] = max(self.elts[i-1],self.elts[i])
+      self.elts = temp
     # Everything okay!
     print("\nDone")
 
 if __name__ == "__main__":
-  argparser = argparse.ArgumentParser()
-  argparser.add_argument("--size", type=int, help="initial size of the queue", default=10, required=False)
-
-  args = argparser.parse_args()
-
   # Initialize the queue
-  pq = Pq(args.size)
+  pq = Pq()
 
   # Give the user a friendly menu
   usr_choice = 0
