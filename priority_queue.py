@@ -9,6 +9,17 @@ class Pq:
   	print("\nCurrent queue:")
   	print(self.elts)
 
+  def assert_correctness(self):
+    if len(self.elts) > 1:
+      for i in range(len(self.elts)-1):
+        if i % 2 == 0:
+          # Check the predicate P
+          assert self.elts[i] <= self.elts[i+1]
+          if i+2 < len(self.elts):
+            # Check the predicate Q
+            assert self.elts[i] <= self.elts[i+2]
+    print("Queue is correct!\n")
+
   def push(self,to_push):
     if len(self.elts) < 1:
       # Queue is empty, so just add the first element
@@ -29,28 +40,33 @@ class Pq:
       for i in range(len(self.elts)):
         temp.append(self.elts[i])
       # Inductively correct the queue
+      print("Temp:")
+      print(temp)
       for i in range(len(self.elts)):
         if i % 2 == 0:
           temp[i] = min(self.elts[i],self.elts[i-1])
           if i+1 < len(self.elts):
+            print(self.elts)
             temp[i+1] = max(self.elts[i-1],self.elts[i])
       self.elts = temp
-    # Everything okay!
-    print("\nDone")
 
   def pop(self):
+    # Queue is empty, so can't pop
     if len(self.elts) < 1:
       print("\nNothing to pop!")
       return None
+    # Queue only has one element, so pop it
     elif len(self.elts) == 1:
       popped = self.elts[0]
       self.elts = []
       return popped
+    # Queue only has two elements, pop the first one.
     elif len(self.elts) == 2:
       popped = self.elts[0]
       self.elts = [self.elts[1]]
       return popped
     else:
+      # Inductively handle the queue
       popped = self.elts[0]
       temp = []
       for i in range(len(self.elts)):
@@ -62,6 +78,7 @@ class Pq:
           else:
             temp[i] = min(self.elts[i+1],self.elts[i+2])
             temp[i+1] = max(self.elts[i+1],self.elts[i+2])
+      # Last element is leftover. Get rid of it.
       del temp[-1]
       self.elts = temp
       return popped
@@ -75,6 +92,8 @@ if __name__ == "__main__":
   while usr_choice != 3:
     # Display the queue
     pq.display()
+    # Check that the queue is correct
+    pq.assert_correctness()
     # Give the user a friendly menu
     print("\n1: push something onto the queue")
     print("2: pop something from the queue")
