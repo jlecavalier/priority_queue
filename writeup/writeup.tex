@@ -29,7 +29,7 @@ a) First of all, $x_{2i+2}\leq x_{2i+3}$ since $p_i$ holds by assumption, so if 
 b) Also, $x_{2i+2}\leq x_{2i+4}$ since $q_i$ holds by assumption, so if $min(x_{2i+1},x_{2i+2})=x_{2i+2}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+4}$, then $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$.\\*
 c) If $min(x_{2i+1},x_{2i+2})=x_{2i+1}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+4}$, then $x_{2i+1}\leq x_{2i+2}$. We already showed in case (b) that $x_{2i+2}\leq x_{2i+4}$, so this means that $x_{2i+1}\leq x_{2i+2}$. Thus, $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$.\\*
 d) Finally, if $min(x_{2i+1},x_{2i+2})=x_{2i+1}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+3}$, then again we have $x_{2i+1}\leq x_{2i+2}$. In case (a) we showed $x_{2i+2}\leq x_{2i+3}$, so $x_{2i+1}\leq x_{2i+3}$. Therefore, $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$ in this case as well.\\*\\*
-Whether we push or pop, the property $q$ is preserved. Since $p_i\wedge q_i$ holds at the initial state and $p_i\wedge q_i$ holds at every state we can transition into from a state satisfying $p_i\wedge q_i$, we conclude that the property is inductive.$\hfill\Box$\\*\\*
+Whether we push or pop, the property $q$ is preserved. Since $p_i\wedge q_i$ holds at the initial state and $p_i\wedge q_i$ holds at every state we can transition into from a state satisfying $p_i\wedge q_i$, we conclude that the property is inductive.$\hfill\Box$\vspace{120px}\\*\\*
 \textbf{Problem 4.} First, we expand the formula $\varphi=pRFq$ into disjunctive normal form:\\*\\*
 $pRFq\Longleftrightarrow Fq\wedge(p\vee X(pRFq))$\\*
 $Fq\wedge(p\vee X(pRFq))\Longleftrightarrow(q\vee X(Fq))\wedge(p\vee X(pRFq))$\\*
@@ -60,5 +60,14 @@ Now, we can create the corresponding Buchi automata:\\*\\*
 
 \draw[edge][loop][in=0,out=30,looseness=5] (d) to (d);
 \end{tikzpicture}\\*\\*
-\textbf{Problem 5.}
+\textbf{Problem 5.} $pRFq$ is a liveness property.\\*\\*
+First, we note that $pRFq$ is not a safety property. To demonstrate this, we construct a trace which is a counterexample to $pRFq$, but we show that any finite prefix of this trace can easily be extended into a trace satisfying $pRFq$.\\*\\*
+Let $T$ be a trace which satisfies $p$ at the $n^{th}$ state in our computation, but which never satisfies $q$ on or after the $n^{th}$ state. It is easy to verify that $T$ is a counterexample to $pRFq$. However, We can take any finite prefix of $T$ and extend it into a trace which \textit{does} satisfy $pRFq$.\\*\\*
+If the selected finite prefix is of length $m<n$, then we simply extend the prefix to a trace in which the $m+1^{th}$ state satisfies $p\wedge q$ and the rest of the following states satisfy neither $p$ nor $q$.\\*\\*
+If the selected finite prefix is of length $n$, then we extend the prefix to a trace in which the $n+1^{th}$ state satisfies $q$ and the rest of the following states satisfy neither $p$ nor $q$.\\*\\*
+Finally, if the selected finite prefix is of length $m>n$, then we again make the $m+1^{th}$ state satisfy $q$ and the rest of the following states satisfy neither $p$ nor $q$.\\*\\*
+Thus, we see that there is no finite prefix of $T$ which cannot be extended into a trace which satisfies $pRFq$. This means that $pRFq$ is not a safety property.\\*\\*
+While $pRFq$ is not a safety property, we can demonstrate that $pRFq$ \textit{is} a liveness property. To do this, we show that any finite computation can be extended into a trace which satisfies $pRFq$. Here's how:\\*\\*
+Suppose that $T$ is a finite computation with $n$ states. We extend $T$ into a trace $T^\prime$ such that the $n+1^{th}$ state of $T^\prime$ satisfies $p\wedge q$ and satisfies neither $p$ nor $q$ in any of the following states. $T^\prime$ will always satisfy $pRFq$, regardless of what $T$ is. We can see this from observing the Buchi automata from problem 4. No matter which of the three above states we are in, we always transition to the bottom-most state upon satisfying $p\wedge q$. After we have reached that state, we are good to go.\\*\\*
+Overall, since $pRFq$ satisfies the definition of a liveness property, but not the definition of a safety property, we conclude that $pRFq$ is a liveness property.$\hfill\Box$
 \end{document}
