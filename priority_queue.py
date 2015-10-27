@@ -35,19 +35,21 @@ class Pq:
       self.elts.append(odd)
     else:
       # Place the new element in the second place
-      self.elts.append(to_push)
-      temp = []
+      temp = [0]
       for i in range(len(self.elts)):
         temp.append(self.elts[i])
       # Inductively correct the queue
-      print("Temp:")
-      print(temp)
       for i in range(len(self.elts)):
-        if i % 2 == 0:
-          temp[i] = min(self.elts[i],self.elts[i-1])
-          if i+1 < len(self.elts):
-            print(self.elts)
-            temp[i+1] = max(self.elts[i-1],self.elts[i])
+        if i == 0:
+          temp[i] = min(to_push,self.elts[i])
+          temp[i+1] = max(to_push,self.elts[i])
+        elif i % 2 == 0:
+          if i == len(self.elts) - 1:
+            temp[i] = self.elts[i-1]
+          else:
+            temp[i] = min(self.elts[i],self.elts[i-1])
+            if i + 1 < len(self.elts):
+              temp[i+1] = max(self.elts[i],self.elts[i-1])
       self.elts = temp
 
   def pop(self):
