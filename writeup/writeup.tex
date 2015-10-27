@@ -24,4 +24,16 @@ b) Now, if $min(x_{2i},x_{2i-1})=x_{2i-1}$ and $min(x_{2i+2},x_{2i+1})=x_{2i+2}$
 c) Since $p$ is an inductive property, we must have $x_{2i}\leq x_{2i+1}$. Therefore, if $min(x_{2i},x_{2i-1})=x_{2i}$ and $min(x_{2i+2},x_{2i+1})=x_{2i+1}$, then $min(x_{2i},x_{2i-1})\leq min(x_{2i+2},x_{2i+1})$.\\*
 d) Finally, $x_{2i-1}\leq x_{2i+1}$, since $q$ holds by supposition. Therefore, if $min(x_{2i},x_{2i-1})=x_{2i-1}$ and $min(x_{2i+2},x_{2i+1})=x_{2i+1}$, then $min(x_{2i},x_{2i-1})\leq min(x_{2i+2},x_{2i+1})$.\\*\\*
 In all four cases, we showed that $x^\prime_{2i}\leq x^\prime_{2i+2}$, which means that $q_i$ is an inductive property across all push operations.\\*\\*
+ii) If the transition was a pop, then we want to show that $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$. Again, we can split this up into four sub-cases:\\*\\*
+a) First of all, $x_{2i+2}\leq x_{2i+3}$ since $p_i$ holds by assumption, so if $min(x_{2i+1},x_{2i+2})=x_{2i+2}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+3}$, then $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$.\\*
+b) Also, $x_{2i+2}\leq x_{2i+4}$ since $q_i$ holds by assumption, so if $min(x_{2i+1},x_{2i+2})=x_{2i+2}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+4}$, then $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$.\\*
+c) If $min(x_{2i+1},x_{2i+2})=x_{2i+1}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+4}$, then $x_{2i+1}\leq x_{2i+2}$. We already showed in case (b) that $x_{2i+2}\leq x_{2i+4}$, so this means that $x_{2i+1}\leq x_{2i+2}$. Thus, $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$.\\*
+d) Finally, if $min(x_{2i+1},x_{2i+2})=x_{2i+1}$ and $min(x_{2i+3},x_{2i+4})=x_{2i+3}$, then again we have $x_{2i+1}\leq x_{2i+2}$. In case (a) we showed $x_{2i+2}\leq x_{2i+3}$, so $x_{2i+1}\leq x_{2i+3}$. Therefore, $min(x_{2i+1},x_{2i+2})\leq min(x_{2i+3},x_{2i+4})$ in this case as well.\\*\\*
+Whether we push or pop, the property $q$ is preserved. Since $p_i\wedge q_i$ holds at the initial state and $p_i\wedge q_i$ holds at every state we can transition into from a state satisfying $p_i\wedge q_i$, we conclude that the property is inductive.$\hfill\Box$\\*\\*
+\textbf{Problem 4.} First, we expand the formula $\varphi=pRFq$ into disjunctive normal form:\\*\\*
+$pRFq\Longleftrightarrow Fq\wedge(p\vee X(pRFq))$\\*
+$Fq\wedge(p\vee X(pRFq))\Longleftrightarrow(q\vee X(Fq))\wedge(p\vee X(pRFq))$\\*
+$(q\vee X(Fq))\wedge(p\vee X(pRFq))\Longleftrightarrow(p\wedge q)\vee(p\wedge X(Fq))\vee(q\wedge X(pRFq))\vee(X(Fq)\wedge X(pRFq))$\\*
+$\Longleftrightarrow(p\wedge q\wedge X(true))\vee(p\wedge X(Fq))\vee(q\wedge X(pRFq))\vee(true\wedge X(Fq\wedge pRFq))$\\*\\*
+Now, we can create the corresponding Buchi automata:\\*\\*
 \end{document}
