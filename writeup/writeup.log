@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.14)  26 OCT 2015 21:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.27)  26 OCT 2015 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **writeup.tex
 (./writeup.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -385,8 +385,41 @@ File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
 ioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautom
+ata.code.tex
+File: tikzlibraryautomata.code.tex 2008/07/14 v2.10 (rcs-revision 1.3)
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.c
+ode.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box37
+\pgfnodeparttwobox=\box38
+\pgfnodepartthreebox=\box39
+\pgfnodepartfourbox=\box40
+\pgfnodeparttwentybox=\box41
+\pgfnodepartnineteenbox=\box42
+\pgfnodeparteighteenbox=\box43
+\pgfnodepartseventeenbox=\box44
+\pgfnodepartsixteenbox=\box45
+\pgfnodepartfifteenbox=\box46
+\pgfnodepartfourteenbox=\box47
+\pgfnodepartthirteenbox=\box48
+\pgfnodeparttwelvebox=\box49
+\pgfnodepartelevenbox=\box50
+\pgfnodeparttenbox=\box51
+\pgfnodepartninebox=\box52
+\pgfnodeparteightbox=\box53
+\pgfnodepartsevenbox=\box54
+\pgfnodepartsixbox=\box55
+\pgfnodepartfivebox=\box56
+))) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
+
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
@@ -430,7 +463,7 @@ LaTeX Font Info:    ... okay on input line 8.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
 \scratchdimen=\dimen166
-\scratchbox=\box37
+\scratchbox=\box57
 \nofMPsegments=\count123
 \nofMParguments=\count124
 \everyMPshowfont=\toks30
@@ -526,7 +559,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 9.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (6.04443pt too wide) in paragraph at lines 9--39
+Overfull \hbox (6.04443pt too wide) in paragraph at lines 9--64
 \OT1/cmr/m/n/12 a) First of all, $\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^T \OM
 L/cmm/m/it/12 x[]$ \OT1/cmr/m/n/12 by the fact that $\OML/cmm/m/it/12 q[]$ \OT1
 /cmr/m/n/12 holds. There-fore, if $\OML/cmm/m/it/12 min\OT1/cmr/m/n/12 (\OML/cm
@@ -536,7 +569,7 @@ m/m/it/12 x[]; x[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 x[]$ \OT1/cmr/m/n/12 and
  []
 
 
-Overfull \hbox (35.96596pt too wide) in paragraph at lines 9--39
+Overfull \hbox (35.96596pt too wide) in paragraph at lines 9--64
 \OT1/cmr/m/n/12 d) Fi-nally, $\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^T \OML/cm
 m/m/it/12 x[]$\OT1/cmr/m/n/12 , since $\OML/cmm/m/it/12 q$ \OT1/cmr/m/n/12 hold
 s by sup-po-si-tion. There-fore, if $\OML/cmm/m/it/12 min\OT1/cmr/m/n/12 (\OML/
@@ -546,17 +579,12 @@ nd $\OML/cmm/m/it/12 min\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/
  []
 
 
-Overfull \hbox (18.47058pt too wide) in paragraph at lines 9--39
+Overfull \hbox (18.47058pt too wide) in paragraph at lines 9--64
 \OT1/cmr/m/n/12 a) First of all, $\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^T \OM
 L/cmm/m/it/12 x[]$ \OT1/cmr/m/n/12 since $\OML/cmm/m/it/12 p[]$ \OT1/cmr/m/n/12
  holds by as-sump-tion, so if $\OML/cmm/m/it/12 min\OT1/cmr/m/n/12 (\OML/cmm/m/
 it/12 x[]; x[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 x[]$ \OT1/cmr/m/n/12 and $\O
 ML/cmm/m/it/12 min\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 ) =
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--39
 
  []
 
@@ -568,29 +596,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] (./writeup.aux) ) 
+] [2] [3] (./writeup.aux) ) 
 Here is how much of TeX's memory you used:
- 11459 strings out of 493304
- 210200 string characters out of 6139870
- 277895 words of memory out of 5000000
- 14676 multiletter control sequences out of 15000+600000
+ 12155 strings out of 494985
+ 232529 string characters out of 6180356
+ 305243 words of memory out of 5000000
+ 15120 multiletter control sequences out of 15000+600000
  9291 words of font info for 35 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 56i,12n,55p,582b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on writeup.pdf (2 pages, 97581 bytes).
+ 36 hyphenation exceptions out of 8191
+ 56i,12n,68p,582b,698s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on writeup.pdf (3 pages, 99867 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 57 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

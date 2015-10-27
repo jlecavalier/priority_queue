@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath,amsfonts,amssymb,fancyhdr,tikz,pgf}
-\usetikzlibrary{arrows,positioning}
+\usetikzlibrary{arrows,positioning,automata}
 \pagestyle{fancy}
 \usepackage[margin=0.5in]{geometry}
 \rhead{$\>$\\*$\>$\\*$\>$\\*Jay LeCavalier - Computer Aided Verification - Midterm Writeup}
@@ -36,4 +36,29 @@ $Fq\wedge(p\vee X(pRFq))\Longleftrightarrow(q\vee X(Fq))\wedge(p\vee X(pRFq))$\\
 $(q\vee X(Fq))\wedge(p\vee X(pRFq))\Longleftrightarrow(p\wedge q)\vee(p\wedge X(Fq))\vee(q\wedge X(pRFq))\vee(X(Fq)\wedge X(pRFq))$\\*
 $\Longleftrightarrow(p\wedge q\wedge X(true))\vee(p\wedge X(Fq))\vee(q\wedge X(pRFq))\vee(true\wedge X(Fq\wedge pRFq))$\\*\\*
 Now, we can create the corresponding Buchi automata:\\*\\*
+\begin{tikzpicture}
+\tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+\tikzset{edge/.style = {->,> = latex'}}
+% NODES
+\node[state][initial] (a) at (0,0) {};
+\node[state] (b) at (3,-1) {};
+\node[state][accepting] (c) at (4,2) {};
+\node[state][accepting] (d) at (4,-4) {};
+% EDGES
+\draw[edge][loop][in=90,out=130,looseness=5] (a) to (a);
+\draw[edge] (a) to node [auto,below] {$p$} (b);
+\draw[edge][bend left] (a) to node [auto] {$q$} (c);
+\draw[edge][bend right] (a) to node [auto] {$p\wedge q$} (d);
+
+\draw[edge] (b) to node [auto] {$q$} (d);
+\draw[edge][loop][in=0,out=30,looseness=5] (b) to (b);
+
+\draw[edge] (c) to node [auto] {} (a);
+\draw[edge] (c) to node [auto] {$p$} (b);
+\draw[edge][bend left] (c) to node [auto] {$p\wedge q$} (d);
+\draw[edge][loop][in=0,out=30,looseness=5] (c) to node [auto,right] {$q$} (c);
+
+\draw[edge][loop][in=0,out=30,looseness=5] (d) to (d);
+\end{tikzpicture}\\*\\*
+\textbf{Problem 5.}
 \end{document}
